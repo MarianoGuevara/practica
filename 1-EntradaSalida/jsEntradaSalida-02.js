@@ -23,3 +23,10 @@ function mostrar ()
 	//y con el alert, ejecutas la variable nombre, que ahora equivale al dato ingresado por el usuario gracias a prompt
 }
 
+//(codigo sin interrupcion de comentarios)
+
+function mostrar()
+{
+	let nombreAsignado = prompt("ingrese su nombre");
+	alert (nombreAsignado);
+}
