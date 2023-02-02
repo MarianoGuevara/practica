@@ -2,6 +2,7 @@
 Debemos lograr tomar un dato por 'PROMPT' 
 y lo muestro por 'ID' al presionar el botón 'mostrar'
 */
+
 function mostrar() //cuando se aprete mostrar (el botón) sucederá la acción
 {
 	let nombreIngresado;

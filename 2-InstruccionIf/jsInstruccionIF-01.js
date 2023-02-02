@@ -1,6 +1,29 @@
 function mostrar()
-{
-	//tomo la edad  
-	alert("ok");
+{	
+	let edad;
+	edad = document.getElementById("txtIdEdad").value;
+	
+	if (edad == 15){ 
 
-}//FIN DE LA FUNCIÓN
+		alert("ñiña bonita...");
+	}
+
+	//alert("fin de la funcion")
+}
+
+    //OPERADORES COMPARACION
+    /*
+    ==       IGUAL A
+    !=       DISTINTO A
+    
+    >		 MAYOR QUE
+    <        MENOR QUE
+    >=       MAYOR O IGUAL A
+    <=       MENOR O IGUAL A
+
+    //OPERADORES LOGICOS
+	
+    &&  	AND     = Y 
+    ||  	OR     = O
+    !  		NOT    = CONTRARIO
+    */
