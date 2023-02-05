@@ -3,28 +3,28 @@ A.	Al ingresar una temperatura en Fahrenheit debemos mostrar la temperatura en C
 B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en Fahrenheit (ej.: "0  centígrados son 32 Fahrenheit ").
 */
 
-function FahrenheitCentigrados () 
+function FahrenheitCentigrados()
 {
-	let temperaturaFahrenheit;
-    let temperaturaCentígrados;
+    let temperaturaIngresada;
+    let temperaturaInvertida;
 
-    temperaturaFahrenheit = document.getElementById("txtIdTemperatura").value;
-    temperaturaFahrenheit = parseInt(temperaturaFahrenheit);
+    temperaturaIngresada = document.getElementById("txtIdTemperatura").value;
+    temperaturaIngresada = parseInt(temperaturaIngresada);
 
-    temperaturaCentígrados = (temperaturaFahrenheit - 32) / 1.8;    //cuenta de conversion sacada de google
-   
-    alert(temperaturaFahrenheit + " grados fahrenheit son " + temperaturaCentígrados + " grados centígrados");
+    temperaturaInvertida = (temperaturaIngresada - 32) * 5 / 9;
+
+    alert(temperaturaIngresada + " grados f. son: " + temperaturaInvertida + " grados c");
 }
 
-function CentigradosFahrenheit () 
+function CentigradosFahrenheit ()
 {
-    let temperaturaCentígrados;
-    let temperaturaFahrenheit;
-   
-    temperaturaCentígrados = document.getElementById("txtIdTemperatura").value;
-    temperaturaCentígrados = parseInt(temperaturaCentígrados);
+    let temperaturaIngresada;
+    let temperaturaInvertida;
 
-    temperaturaFahrenheit = (temperaturaCentígrados * 9/5) + 32;    //cuenta de conversion sacada de google
-   
-    alert(temperaturaCentígrados + " grados centígrados son " + temperaturaFahrenheit + " grados fahrenheit");
+    temperaturaIngresada = document.getElementById("txtIdTemperatura").value;
+    temperaturaIngresada = parseInt(temperaturaIngresada);
+
+    temperaturaInvertida = (temperaturaIngresada * 9 / 5) + 32;
+
+    alert(temperaturaIngresada + " grados c. son: " + temperaturaInvertida + " grados f");
 }
