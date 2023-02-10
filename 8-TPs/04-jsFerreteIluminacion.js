@@ -8,7 +8,139 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+
 function CalcularPrecio () 
 {
- 	
+ 	let lamparasPrecio;
+    let cantidadLamparas;
+    let precioLamparas;
+    let descuentoPorcentaje;
+    let marca;
+    let descuentoTotal;
+    let precioMenosDescuento;
+    let ingresosBrutos;
+
+    lamparasPrecio = 35;
+
+    cantidadLamparas = document.getElementById("txtIdCantidad").value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+
+    precioLamparas = lamparasPrecio * cantidadLamparas;
+
+    marca = document.getElementById("Marca").value;
+
+    if (marca == "ArgentinaLuz") 
+    {
+        if (cantidadLamparas >= 6)
+        {
+            descuentoPorcentaje = 50
+        }
+        else
+        {
+            if (cantidadLamparas == 5)
+            {
+                descuentoPorcentaje = 40;
+            }
+            else
+            {
+                if (cantidadLamparas == 4)
+                {
+                    descuentoPorcentaje = 25;
+                }
+                else
+                {
+                    if (cantidadLamparas == 3)
+                    {
+                        descuentoPorcentaje = 15;
+                    }
+                    else
+                    {
+                        descuentoPorcentaje = 0
+                    }
+                } 
+            }  
+        }
+    }
+    else
+    {   
+        if (marca == "FelipeLamparas")
+        {
+            if (cantidadLamparas >= 6)
+            {
+                descuentoPorcentaje = 50;
+            }
+            else
+            {
+                if (cantidadLamparas == 5)
+                {
+                    descuentoPorcentaje = 30;
+                }
+                else
+                {
+                    if (cantidadLamparas == 4)
+                    {
+                        descuentoPorcentaje = 25;
+                    }
+                    else
+                    {
+                        if (cantidadLamparas == 3) 
+                        {
+                            descuentoPorcentaje = 10;
+                        }
+                        else
+                        {
+                            descuentoPorcentaje = 0;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (cantidadLamparas >= 6)
+            {
+                descuentoPorcentaje = 50;
+            }
+            else
+            {
+                if (cantidadLamparas == 5)
+                {
+                    descuentoPorcentaje = 30;
+                }
+                else
+                {
+                    if (cantidadLamparas == 4)
+                    {
+                        descuentoPorcentaje = 20;
+                    }
+                    else
+                    {
+                        if (cantidadLamparas == 3)
+                        {
+                            descuentoPorcentaje = 5;
+                        }
+                        else
+                        {
+                            descuentoPorcentaje = 0;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+    
+    descuentoTotal = precioLamparas / 100 * descuentoPorcentaje;
+
+    precioMenosDescuento = precioLamparas - descuentoTotal;
+
+    ingresosBrutos = precioMenosDescuento * 0.10;
+
+    if (precioMenosDescuento >= 120)
+    {   
+        precioMenosDescuento = precioMenosDescuento + ingresosBrutos;
+
+        alert("En IIBB Usted pago: " + ingresosBrutos);
+    }
+
+    document.getElementById("txtIdprecioDescuento").value = precioMenosDescuento;
 }
