@@ -7,8 +7,6 @@ function mostrar()
 
 		alert("ñiña bonita...");
 	}
-
-	//alert("fin de la funcion")
 }
 
     //OPERADORES COMPARACION

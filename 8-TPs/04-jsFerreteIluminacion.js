@@ -11,7 +11,88 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
 function CalcularPrecio () 
 {
- 	let lamparasPrecio;
+    let cantidadLamparas;
+    let marca;
+    let precioLamparas;
+    let porcentaje;
+    let descuento;
+    let precioConDescuento;
+    let precioFinal;
+    let iibb;
+
+    cantidadLamparas = document.getElementById("txtIdCantidad").value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+
+    marca = document.getElementById("Marca").value;
+
+    precioLamparas = 35 * cantidadLamparas;
+
+    switch (cantidadLamparas)
+    {
+        case 0:
+        case 1:
+        case 2:
+            porcentaje = 0;
+            break;
+        case 3:
+            if(marca == "ArgentinaLuz")
+            {
+                porcentaje = 0.15;
+            }
+            else
+            {
+                if (marca == "FelipeLamparas")
+                {
+                    porcentaje = 0.10;
+                }
+                else
+                {
+                    porcentaje = 0.05;
+                }
+            }
+            break;
+        case 4:
+            switch(marca)
+            {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    porcentaje = 0.25;
+                    break;
+                default:
+                    porcentaje = 0.20;
+            }
+            break;
+        case 5:
+            if(marca == "ArgentinaLuz")
+            {
+                porcentaje = 0.40;
+            }
+            else
+            {
+                porcentaje = 0.30;
+            }
+            break;
+        default:
+            porcentaje = 0.50;
+    }
+
+    descuento = precioLamparas * porcentaje;
+    precioConDescuento = precioLamparas - descuento;
+
+    if (precioConDescuento >= 120)
+    {
+        iibb = precioConDescuento * 0.10;
+        precioFinal = precioConDescuento + iibb;   
+        alert("IIBB: " + iibb); 
+    }
+
+    alert(precioConDescuento);
+}
+
+
+
+/*
+    	let lamparasPrecio;
     let cantidadLamparas;
     let precioLamparas;
     let descuentoPorcentaje;
@@ -133,14 +214,14 @@ function CalcularPrecio ()
 
     precioMenosDescuento = precioLamparas - descuentoTotal;
 
-    ingresosBrutos = precioMenosDescuento * 0.10;
-
     if (precioMenosDescuento >= 120)
     {   
+        ingresosBrutos = precioMenosDescuento * 0.10;
         precioMenosDescuento = precioMenosDescuento + ingresosBrutos;
 
         alert("En IIBB Usted pago: " + ingresosBrutos);
     }
 
     document.getElementById("txtIdprecioDescuento").value = precioMenosDescuento;
-}
+
+*/

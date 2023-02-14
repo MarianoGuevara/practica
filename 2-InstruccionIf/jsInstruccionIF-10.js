@@ -2,7 +2,7 @@ function mostrar()
 {
 	let numeroRandom;
 
-	numeroRandom = Math.round(Math.random()*10); 
+	numeroRandom = Math.floor(Math.random() * (11 - 1) + 1); 
 
 	if (numeroRandom == 10 || numeroRandom == 9) //numeroRandom <= 10 && numeroRandom > 8 (otra forma)
 	{
@@ -10,7 +10,7 @@ function mostrar()
 	}
 	else
 	{
-		if (numeroRandom <= 8 && numeroRandom > 4)
+		if (numeroRandom < 9 && numeroRandom > 3)
 		{
 		alert("NOTA: " + numeroRandom + "   CALIFICACION: aprobó");
 		}
