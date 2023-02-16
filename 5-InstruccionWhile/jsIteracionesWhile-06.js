@@ -8,15 +8,19 @@ function mostrar()
     acumulador = 0;
     contador = 0;
 
-    numerosIngresados = prompt("Ingresa un numero:");
-    numerosIngresados = parseInt(numerosIngresados);
-    while (contador < 4)    //ES UNO MENOS XQ SI BIEN PIDE 5 NUMS, EL PRIMERO YA LO PIDIO ANTES DEL WHILE, SOLO FALTAN 4
+    while (contador < 5)    //ES UNO MENOS XQ SI BIEN PIDE 5 NUMS, EL PRIMERO YA LO PIDIO ANTES DEL WHILE, SOLO FALTAN 4
     {
-        contador++;
-        acumulador = acumulador += numerosIngresados;
-
         numerosIngresados = prompt("Ingresa un numero:");
         numerosIngresados = parseInt(numerosIngresados);
+    
+        while (isNaN(numerosIngresados))
+        {
+            numerosIngresados = prompt("Eso no es un valor numerico:");
+            numerosIngresados = parseInt(numerosIngresados);
+        }
+
+        contador++;
+        acumulador += numerosIngresados;
     }
 
     document.getElementById("txtIdSuma").value = acumulador;

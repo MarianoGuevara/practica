@@ -9,11 +9,38 @@ function mostrar()
     let numerosIngresados;
     let acumulador;
     let promedio;
+    let respuesta = "si";
 
     acumulador = 0;
     contador = 0;
 
-    numerosIngresados = prompt("Ingresa un numero:");
+   while (respuesta == "si")
+   {
+        numerosIngresados = prompt("Ingrese un número");
+        numerosIngresados = parseInt(numerosIngresados);
+
+        while(isNaN(numerosIngresados))
+        {
+            numerosIngresados = prompt("No es tan dificil pa, tenes q ingresar un número, no otra cosa");
+            numerosIngresados = parseInt(numerosIngresados);
+        }
+
+        acumulador += numerosIngresados;
+        contador ++
+
+        respuesta = prompt("Ingrese 'si' para volver a introducir otro número");
+   }   
+
+    document.getElementById("txtIdSuma").value = acumulador;
+
+    promedio = acumulador / contador;
+    document.getElementById("txtIdPromedio").value = promedio;
+}   
+
+
+/* CON NaN
+
+    numerosIngresados = prompt("Ingresa un numero: (cualquier otro caracter para terminar el programa)");
     numerosIngresados = parseInt(numerosIngresados);
 	
     while (!(isNaN(numerosIngresados)))
@@ -21,7 +48,7 @@ function mostrar()
         contador++;
         acumulador = acumulador += numerosIngresados;
 
-        numerosIngresados = prompt("Ingresa un numero:");
+        numerosIngresados = prompt("Ingresa un numero: (cualquier otro caracter para terminar el programa)");
         numerosIngresados = parseInt(numerosIngresados);
     }
 
@@ -29,5 +56,4 @@ function mostrar()
 
     promedio = acumulador / contador;
     document.getElementById("txtIdPromedio").value = promedio;
-
-}
+*/

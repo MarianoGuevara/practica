@@ -24,67 +24,79 @@ function comenzar()
 function verificar()
 {
 	let numeroIngresado;
-    let mensaje;
+	let mensaje;
     let mensajeIntentos;
 
-    numeroIngresado = document.getElementById("txtIdNumero").value;
-    numeroIngresado = parseInt(numeroIngresado);
- 
-    intentos ++;
-    document.getElementById("txtIdIntentos").value = intentos;
+	if (numeroSecreto == undefined)
+	{
+		alert("NO HAY NUMERO SECRETO; presione el botón 'comenzar' antes de iniciar el juego");
+	}
+	else
+	{
+		numeroIngresado = document.getElementById("txtIdNumero").value;
+		numeroIngresado = parseInt(numeroIngresado);
 
-    if (numeroIngresado > 100 || numeroIngresado < 1)
-    {
-    	mensaje = "Ese numero está fuera del rango deseado (1 a 100)";
-    }
-    else
-    {
-		if (numeroIngresado > numeroSecreto)
+		if (isNaN(numeroIngresado))
 		{
-			mensaje = "Se pasó...";
+			alert("Ingresa un valor numérico, si no, el juego no tiene gracia!!!");
 		}
 		else
-		{
-			if (numeroIngresado < numeroSecreto)
+		{		
+			intentos ++;
+			document.getElementById("txtIdIntentos").value = intentos;
+
+			if (numeroIngresado > 100 || numeroIngresado < 1)
 			{
-			mensaje = "Falta...";
+				mensaje = "Ese numero está fuera del rango deseado (1 a 100)";
 			}
 			else
 			{
-				mensaje = "Usted es el ganador!! Y en solo: " + intentos  + " intentos!.";
-
-				switch (intentos)
+				if (numeroIngresado > numeroSecreto)
 				{
-					case 1:
-						mensajeIntentos = "Usted es un psiquico";
-						break;
-					case 2: 
-						mensajeIntentos = "excelente percepción";
-						break;
-					case 3:
-						mensajeIntentos = "Esto es suerte";
-						break;
-					case 4:
-						mensajeIntentos = "Excelente técnica";
-						break;
-					case 5:
-						mensajeIntentos = "usted está en la media";
-						break;
-					case 6:
-					case 7:
-					case 8:
-					case 9:
-					case 10:
-						mensajeIntentos = "falta técnica";
-						break;
-					default:
-						mensajeIntentos = "afortunado en el amor!!";
+					mensaje = "Se pasó...";
 				}
-				alert(mensajeIntentos);
-			}
-		}		
-	}
-	
-    alert(mensaje);
+				else
+				{
+					if (numeroIngresado < numeroSecreto)
+					{
+					mensaje = "Falta...";
+					}
+					else
+					{
+						mensaje = "Usted es el ganador!! Y en solo: " + intentos  + " intentos!.";
 
+						switch (intentos)
+						{
+							case 1:
+								mensajeIntentos = "Usted es un psiquico";
+								break;
+							case 2: 
+								mensajeIntentos = "excelente percepción";
+								break;
+							case 3:
+								mensajeIntentos = "Esto es suerte";
+								break;
+							case 4:
+								mensajeIntentos = "Excelente técnica";
+								break;
+							case 5:
+								mensajeIntentos = "usted está en la media";
+								break;
+							case 6:
+							case 7:
+							case 8:
+							case 9:
+							case 10:
+								mensajeIntentos = "falta técnica";
+								break;
+							default:
+								mensajeIntentos = "afortunado en el amor!!";
+						}
+						alert(mensajeIntentos);
+					}
+				}		
+			}
+		alert(mensaje);
+		}
+	}
 }

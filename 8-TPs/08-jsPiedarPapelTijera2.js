@@ -1,21 +1,20 @@
-	let seleccionMaquina;
-    let piedraOpcion;
-    let papelOpcion;
-    let tijeraOpcion;
-    let mensaje;
-	let ganados;
-	let perdidos;
-	let empatados;
-	
-    piedraOpcion = 1;
-    papelOpcion = 2;
-    tijeraOpcion = 3;
+let seleccionMaquina;
+let piedraOpcion;
+let papelOpcion;
+let tijeraOpcion;
+let mensaje;
+let ganados;
+let perdidos;
+let empatados;
 
-	ganados = 0;
-	perdidos = 0;
-	empatados = 0;
+piedraOpcion = 1;
+papelOpcion = 2;
+tijeraOpcion = 3;
 
-	
+ganados = 0;
+perdidos = 0;
+empatados = 0;
+
 function comenzar()
 {
 	seleccionMaquina = Math.floor(Math.random() * (4 - 1) + 1);

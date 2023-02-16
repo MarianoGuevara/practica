@@ -23,6 +23,7 @@ function mostrar()
 	let promedioNegativo;
 	let promedioPositivo;
 	let restaPositivosNegativos;
+	let respuesta = "si";
 
 	sumaNegativos = 0;
 	sumaPositivos = 0;
@@ -32,11 +33,18 @@ function mostrar()
 	ceros = 0;
 
 
-	numeroIngresado = prompt("Ingrese un numero");
-	numeroIngresado = parseInt(numeroIngresado);
 
-	while (!(isNaN(numeroIngresado)))
-	{
+	while (respuesta == "si")
+	{		
+		numeroIngresado = prompt("Ingrese un numero");
+		numeroIngresado = parseInt(numeroIngresado);
+
+		while (isNaN(numeroIngresado))
+		{
+			numeroIngresado = prompt("El carácter ingresado no es numérico. Inténtelo de nuevo:");
+			numeroIngresado = parseInt(numeroIngresado);
+		}
+		
 		switch (numeroIngresado % 2)
 		{
 			case 0:
@@ -61,9 +69,9 @@ function mostrar()
 				sumaPositivos += numeroIngresado;
 				cantidadPositivos ++;
 			}
-		}		
-		numeroIngresado = prompt("Ingrese otro numero, si así lo desea");
-		numeroIngresado = parseInt(numeroIngresado);
+		}	
+			
+		respuesta = prompt("Desea continuar ingresando numeros? 'si' para continuar:")
 	}
 
 	promedioNegativo = sumaNegativos / cantidadNegativos;
@@ -74,3 +82,6 @@ function mostrar()
 	document.write(". La cantidad de 0 es: " + ceros + ". La cantidad de numeros pares: " + numerosPares);
 	document.write(". El promedio de positivos: " + promedioPositivo + ". El promedio de negativos: " + promedioNegativo + ". La resta de positivos y negativos: " + restaPositivosNegativos);
 }
+
+
+// while (!(isNaN(numeroIngresado)))

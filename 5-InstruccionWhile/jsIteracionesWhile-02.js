@@ -10,8 +10,9 @@ function mostrar()
 	while (numeros > 1)
 	{
 		numeros -= 1;
-		alert(numeros);
+		console.log(numeros);
 	}
+
 //otra forma
 	numeros = 10
 
