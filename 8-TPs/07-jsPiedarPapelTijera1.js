@@ -11,18 +11,17 @@ let papelOpcion;
 let tijeraOpcion;
 let mensaje;
 
-piedraOpcion = 1;
-papelOpcion = 2;
-tijeraOpcion = 3;
-
 function comenzar()
 {
+    piedraOpcion = 1;
+    papelOpcion = 2;
+    tijeraOpcion = 3;
+
 	seleccionMaquina = Math.floor(Math.random() * (4 - 1) + 1);
 }
 
 function piedra()
 {
-   
 	if (seleccionMaquina == piedraOpcion)
     {
         mensaje = "Empató";

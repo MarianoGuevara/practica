@@ -36,7 +36,7 @@ function mostrar()
 	}
 	if (acumuladorNegativos == 1)
 	{
-		acumuladorNegativos = 0;
+		acumuladorNegativos = "No hay nums negativos";
 	}
 
 	document.getElementById("txtIdSuma").value = acumuladorPositivos;
