@@ -42,9 +42,7 @@ function piedra()
     }
 	alert(mensaje);
 
-	document.getElementById("txtIdGanadas").value = ganados;
-	document.getElementById("txtIdPerdidas").value = perdidos;															
-	document.getElementById("txtIdEmpatadas").value	= empatados;
+	mostrarResultado()
 }
 
 function papel()
@@ -66,9 +64,7 @@ function papel()
     }
 	alert(mensaje);
 
-	document.getElementById("txtIdGanadas").value = ganados;
-	document.getElementById("txtIdPerdidas").value = perdidos;															
-	document.getElementById("txtIdEmpatadas").value	= empatados;
+	mostrarResultado()
 }
 
 function tijera()
@@ -90,12 +86,12 @@ function tijera()
     }
 	alert(mensaje);
 
-	document.getElementById("txtIdGanadas").value = ganados;
-	document.getElementById("txtIdPerdidas").value = perdidos;															
-	document.getElementById("txtIdEmpatadas").value	= empatados;
+	mostrarResultado()
 }
 
 function mostrarResultado()
 {
-	
+	document.getElementById("txtIdGanadas").value = ganados;
+	document.getElementById("txtIdPerdidas").value = perdidos;															
+	document.getElementById("txtIdEmpatadas").value	= empatados;
 }
